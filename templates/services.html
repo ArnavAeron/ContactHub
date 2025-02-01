@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> This is services page </h1>
+
+    <!-- using fragments -->
+     <div class="service-host-tag" th:insert="base :: parent(~{::section})">
+        <section>
+            <hr />
+            <h2> This is a dymamic content </h2>
+            <hr />
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit 
+            voluptatibus aut nihil voluptas similique aspernatur voluptate qui unde 
+            quisquam reprehenderit?</p>
+            <button> Click on Dynamic Content </button>
+        </section>
+
+     </div>
+</body>
+</html>
