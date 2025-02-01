@@ -1,26 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> This is about page </h1>
-    <hr />
-    <!-- using fragment -->
-    <!--         file_name :: fragment_name    -->
-    <div class="host-tag" th:replace="${isLogin} ? ~{base :: parent(~{::.loggedin})} : ~{base :: test(~{::#not_loggedin})}">
-        <section class="loggedin">
-            <h1> User has Loggedin </h1>
-            <h1> This page refers to the about section of the profile we created </h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, in.</p>
-            <button> Click here to activate the assigned task </button>
-        </section>
-
-        <section id="not_loggedin">
-            <h1> user has not loggedin yet </h1>
-        </section>
-    </div> 
+<html
+  lang="en"
+  th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
+>
+  <head>
+    <title>About Page</title>
+  </head>
+  <body>
+    <div id="content">
+      <h1>Welcome to about page</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur,
+        ratione!
+      </p>
+    </div>
+    <script>
+        console.log("about page");
+    </script>
+    <script>
+        console.log("Second about page script");
+    </script>
 </body>
 </html>

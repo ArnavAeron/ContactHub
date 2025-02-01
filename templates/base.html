@@ -1,10 +1,54 @@
-<div class="parent-fragment" th:fragment="parent(content)">
-    <h1> This is parent fragment </h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, nulla.</p>
-    <div th:insert="${content}"></div>
-</div>
+<!DOCTYPE html>
+<html lang="en" th:fragment="parent(content,title,script)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">Smart Contact Manager</title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
 
-<div th:fragment="test(content)">
-    <h1> This is testing fragments </h1>
-    <div th:replace="${content}"></div>
-</div>
+    <style>
+        h1 {
+            font-size: 2em !important; /* Set a desired size */
+            font-weight: bold !important; /* Make it bold if needed */
+        }
+        h2 {
+            font-size: 1em !important; /* Set a desired size */
+            font-weight: bold !important; /* Make it bold if needed */
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- common header -->
+     <ul class="p-4">
+        <li>
+            <a th:href="@{'/home'}">Home</a>
+        </li>
+        <li>
+            <a th:href="@{'/about'}">About</a>
+        </li>
+        <li>
+            <a th:href="@{'/services'}">Services</a>
+        </li>
+     </ul>
+    <!-- main content-->
+     <div class="p-4">
+        <section th:replace="${content}"></section>
+     </div>
+
+    <!-- flow bite content -->
+    <!-- Common Footer -->
+    <Footer class="p-4">
+        <h2> Footer : Adarsh Chandra(0007) , Arnav Aeron(023) , Durgesh Singh(039) </h2>
+    </Footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <th:block th:replace="${script}"></th:block>
+</body>
+</html>
+
