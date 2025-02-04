@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html class="light" lang="en" th:fragment="parent(content,title,script)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">Smart Contact Manager</title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" 
+    />
+
+    <style>
+        h1 {
+            font-size: 2em !important; /* Set a desired size */
+            font-weight: bold !important; /* Make it bold if needed */
+        }
+        h2 {
+            font-size: 1em !important; /* Set a desired size */
+            font-weight: bold !important; /* Make it bold if needed */
+        }
+    </style>
+    
+</head>
+<body class="dark:bg-gray-900 dark:text-white">
+    <!-- Header -->
+     <div th:replace="~{navbar::navbar}"></div>
+
+    <!-- main content-->
+     <div class="p-4">
+        <section th:replace="${content}"></section>
+     </div>
+
+    <!-- flow bite content -->
+    <!-- Common Footer -->
+    <Footer class="p-4">
+        <h2> Footer : Adarsh Chandra(0007) , Arnav Aeron(023) , Durgesh Singh(039) </h2>
+    </Footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script data-th-src="@{'/js/script.js'}"></script>
+    <th:block th:replace="${script}"></th:block>
+</body>
+</html>
+
