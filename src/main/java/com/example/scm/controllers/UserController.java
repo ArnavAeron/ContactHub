@@ -1,24 +1,25 @@
 package com.example.scm.controllers;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
-    
+
     // User dashboard page
-    @RequestMapping(value = "/dashboard", method=RequestMethod.GET)
+    @RequestMapping(value = "/dashboard")
     public String userDashboard() {
         return "user/dashboard";
     }
     
     // user profile page
-    @RequestMapping(value = "/profile", method=RequestMethod.GET)
-    public String userProfile() {
+    @RequestMapping(value = "/profile")
+    public String userProfile(Model model, Authentication authentication) {
+        
         return "user/profile";
     }
 

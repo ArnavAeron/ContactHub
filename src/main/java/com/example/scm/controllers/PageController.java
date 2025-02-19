@@ -66,6 +66,7 @@ public class PageController {
         return "contact";
     }
 
+    // This is showing login page
     // Login page
     @RequestMapping("/login")
     public String LoginPage(){
@@ -73,7 +74,7 @@ public class PageController {
         return "login";
     }
 
-    // Login page
+    // registration page
     @RequestMapping("/register")
     public String RegistrationPage(Model model){
         System.out.println("Loading Registration Page");
