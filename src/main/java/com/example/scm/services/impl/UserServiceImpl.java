@@ -13,6 +13,8 @@ import com.example.scm.helpers.AppConstants;
 import com.example.scm.helpers.ResourceNotFoundException;
 import com.example.scm.repositories.UserRepo;
 import com.example.scm.services.UserService;
+import com.example.scm.helpers.Helper;
+import com.example.scm.services.EmailService;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -24,6 +26,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private EmailService emailService;
+
     @Override
     public User saveUser(User user) {
         // user id : have to be generated dynamically
@@ -32,14 +37,16 @@ public class UserServiceImpl implements UserService {
         // Password Encoded
         // user.setPassword(userId);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-
-        // set the user role 
-
+        // set the user role
         user.setRoleList(List.of(AppConstants.ROLE_USER));
-
         // To set a default picutre use this line 
         // user.setProfilePic(userId);
-        return userRepo.save(user);
+        String emailToken = UUID.randomUUID().toString();
+        user.setEmailToken(emailToken);
+        User savedUser = userRepo.save(user);
+        String emailLink = Helper.getLinkForEmailVerification(emailToken);        
+        emailService.sendEmail(savedUser.getEmail(), "Verify Account : Email Contact Manager", emailLink);
+        return savedUser;
     }
 
     @Override

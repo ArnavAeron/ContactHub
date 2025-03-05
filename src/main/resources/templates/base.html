@@ -57,12 +57,13 @@ xmlns:th="http://www.thymeleaf.org"
 
     <!-- flow bite content -->
     <!-- Common Footer -->
-    <Footer class="p-4 flex justify-center items-center">
+    <Footer class="p-4 flex justify-center items-center bottom-2 z-50">
         <h2> Footer :Arnav Aeron(023) , Ramit Gupta(08) </h2>
     </Footer>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script data-th-src="@{'/js/script.js'}"></script>
     <th:block th:replace="${script}"></th:block>
 </body>
