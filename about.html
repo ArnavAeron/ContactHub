@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
+>
+  <head>
+    <title>About Page</title>
+  </head>
+  <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+    <div th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+      <div id="content" class="container mx-auto px-6 py-10">
+          <h1 class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-4">
+              About Contacts Hub
+          </h1>
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+              Contacts Hub is a smart contact management system designed to help users store, manage, and organize their personal and professional connections with ease. 
+              It provides a secure, user-friendly interface to handle contacts efficiently.
+          </p>
+          
+          <h2 class="text-2xl font-semibold text-blue-500 dark:text-blue-300 mt-6 mb-2">
+              Why Use Contacts Hub?
+          </h2>
+          <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300">
+              <li>🔹 Store & manage contacts effortlessly.</li>
+              <li>🔹 Secure data storage with authentication.</li>
+              <li>🔹 Quick search and organization features.</li>
+              <li>🔹 Email integration for notifications.</li>
+              <li>🔹 Image upload for profile pictures.</li>
+          </ul>
+
+          <h2 class="text-2xl font-semibold text-blue-500 dark:text-blue-300 mt-6 mb-2">
+              Technologies Used
+          </h2>
+          <p class="text-lg text-gray-700 dark:text-gray-300">
+              Contacts Hub is built using <strong>Spring Boot</strong> for the backend and <strong>JavaScript + Tailwind CSS</strong> for a responsive frontend. 
+              The system also leverages <strong>Docker</strong> for easy deployment and cloud scalability.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-blue-500 dark:text-blue-300 mt-6 mb-2">
+              Future Scope
+          </h2>
+          <p class="text-lg text-gray-700 dark:text-gray-300">
+              We plan to integrate <strong>AI-powered contact recommendations</strong>, mobile app support, and advanced analytics to improve user experience.
+          </p>
+
+          <div class="mt-8">
+              <a href="/home" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 
+              dark:bg-blue-500 dark:hover:bg-blue-600">
+                  Back to Home
+              </a>
+          </div>
+      </div>
+    </div>
+    <script>
+        console.log("about page");
+    </script>
+    <script>
+        console.log("Second about page script");
+    </script>
+</body>
+</html>

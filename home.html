@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title>Home Page - Contacts Hub</title>
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-200">
+    <div id="content" class="container mx-auto px-6 py-10">
+
+        <!-- Hero Section -->
+        <section class="text-center py-16">
+            <h1 class="text-5xl font-bold text-blue-600 dark:text-blue-400">Welcome to Contacts Hub</h1>
+            <p class="mt-4 text-lg text-gray-700 dark:text-gray-300">
+                The ultimate smart contact management system for personal and professional use.
+            </p>
+            <a href="/login" class="mt-6 inline-block px-6 py-3 bg-blue-500 text-white text-lg rounded-lg hover:bg-blue-700 dark:hover:bg-blue-400 transition">
+                Get Started
+            </a>
+        </section>
+
+        <!-- Features Section -->
+        <section class="mt-12">
+            <h2 class="text-3xl font-semibold text-blue-500 dark:text-blue-300 text-center">Why Choose Contacts Hub?</h2>
+            <div class="grid md:grid-cols-3 gap-8 mt-8">
+                <div class="p-6 shadow-lg rounded-lg bg-gray-50 dark:bg-gray-800">
+                    <h4 class="text-xl font-semibold text-blue-600 dark:text-blue-400">🔹 Secure & Private</h4>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">
+                        Your data is encrypted and protected with advanced security measures.
+                    </p>
+                </div>
+                <div class="p-6 shadow-lg rounded-lg bg-gray-50 dark:bg-gray-800">
+                    <h4 class="text-xl font-semibold text-blue-600 dark:text-blue-400">🔹 Easy to Use</h4>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">
+                        A user-friendly interface designed for seamless contact management.
+                    </p>
+                </div>
+                <div class="p-6 shadow-lg rounded-lg bg-gray-50 dark:bg-gray-800">
+                    <h4 class="text-xl font-semibold text-blue-600 dark:text-blue-400">🔹 Cloud-Based</h4>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">
+                        Access your contacts from anywhere with real-time syncing.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+      console.log("about page");
+  </script>
+  <script>
+      console.log("Second about page script");
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
+>
+  <head>
+    <title data-th-text="${loggedInUser.name}+' |  SCM'">Dashboard Page</title>
+  </head>
+  <body>
+    <div id="content">
+      <!-- Sidebar -->
+      <div th:if="${loggedInUser}">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="sm:pl-64 pt-10 min-h-screen bg-gray-100 dark:bg-gray-700">
+        <div class="container mx-auto px-6">
+          <h1 class="text-4xl font-bold text-center text-gray-900 dark:text-white">Welcome to Your Dashboard</h1>
+          <p class="text-center text-gray-600 dark:text-gray-300 mt-2">Manage your contacts efficiently</p>
+          
+          <!-- User Guide Section -->
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow mt-6">
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-white">How to Use Contact Hub</h2>
+            <ol class="list-decimal list-inside text-gray-600 dark:text-gray-300 mt-2 space-y-2">
+              <li>Go to the "Add Contact" section to save a new contact.</li>
+              <li>Use the search bar to quickly find saved contacts.</li>
+              <li>Mark important contacts as "Favorites" for quick access.</li>
+              <li>Click on a contact to view details or update information.</li>
+              <li>Use the "Delete" option to remove unwanted contacts.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      console.log("this is Dashboard Page");
+    </script>
+  </body>
+</html>

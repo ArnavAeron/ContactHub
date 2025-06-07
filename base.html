@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html 
+class="light" 
+lang="en" 
+th:fragment="parent(content,title,script)" 
+xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">Smart Contact Manager</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+
+    <link rel="stylesheet" data-th-href="@{'/css/style.css'}"/>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" 
+    />
+
+    <!-- <style>
+        h1 {
+            font-size: 2em !important; /* Set a desired size */
+            font-weight: bold !important; /* Make it bold if needed */
+        }
+        h2 {
+            font-size: 1em !important; /* Set a desired size */
+            font-weight: bold !important; /* Make it bold if needed */
+        }
+    </style> -->
+    
+</head>
+<body class="text-left pt-16 dark:bg-gray-700 bg-gray-100 dark:text-white">
+    <!-- Header -->
+
+    <!-- if user logged in - navbar -->
+    <div th:if="${loggedInUser}">
+        <div data-th-replace="user/user_navbar::user-navbar"></div>
+    </div>
+
+    
+    <!-- if user not logged in - navbar -->
+    <div th:unless="${loggedInUser}">
+        <div data-th-replace="navbar::navbar"></div>
+    </div>
+
+    <!-- main content-->
+     <div class="p-4" style="height: 1000px;">
+        <section th:replace="${content}"></section>
+     </div>
+
+    <!-- flow bite content -->
+    <!-- Common Footer -->
+    <Footer class="p-4 flex justify-center items-center bottom-2 z-50 mt-12 text-center py-6 bg-gray-800 text-white dark:bg-gray-900">
+        <h2> &copy; Footer :Arnav Aeron(023) , Ramit Gupta(08) </h2>
+    </Footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script data-th-src="@{'/js/script.js'}"></script>
+    <th:block th:replace="${script}"></th:block>
+</body>
+</html>
+
